@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://l14ong3u0cp7"]
+
+[ext_resource type="PackedScene" uid="uid://bffxfjhn7jmgt" path="res://assets/Models/cubo/cubo.gltf" id="1_jb0v2"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p3kog"]
+data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
+
+[node name="Box" instance=ExtResource("1_jb0v2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConcavePolygonShape3D_p3kog")

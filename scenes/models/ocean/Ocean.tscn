@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccfgkedpnkjxw"]
+
+[ext_resource type="Shader" path="res://scenes/models/ocean/Ocean.gdshader" id="1_1u883"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gra2y"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_55e52"]
+noise = SubResource("FastNoiseLite_gra2y")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_86l6c"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sa6ae"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_86l6c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_siash"]
+render_priority = 0
+shader = ExtResource("1_1u883")
+shader_parameter/height_scale = 0.5
+shader_parameter/noise = SubResource("NoiseTexture2D_55e52")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_sa6ae")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ysdgh"]
+material = SubResource("ShaderMaterial_siash")
+subdivide_width = 32
+subdivide_depth = 32
+
+[node name="Ocean" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ysdgh")

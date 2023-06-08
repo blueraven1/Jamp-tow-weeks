@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b02kbgs32fvj1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2wmu"]
+size = Vector3(1, 9.6193, 21.3491)
+
+[node name="pared" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_d2wmu")

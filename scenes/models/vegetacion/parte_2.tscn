@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi3cdwogiu4ve"]
+
+[ext_resource type="Texture2D" uid="uid://wx2ankla2670" path="res://assets/Models/vegetacion/parte2/Sprites2.png" id="1_52hvi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbmcr"]
+resource_name = "textura sprite"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_52hvi")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_csh4q"]
+_surfaces = [{
+"aabb": AABB(-0.324613, -0.324612, -1.41893e-08, 0.649225, 0.649225, 1e-05),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "textura sprite",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(158, 51, 166, 190, 156, 51, 166, 190, 13, 197, 115, 178, 158, 51, 166, 62, 156, 51, 166, 190, 13, 197, 115, 178, 158, 51, 166, 190, 156, 51, 166, 62, 13, 197, 115, 50, 158, 51, 166, 62, 156, 51, 166, 62, 13, 197, 115, 50)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o5pp2"]
+resource_name = "parte_2_Plane002"
+_surfaces = [{
+"aabb": AABB(-0.324613, -0.324612, -1.41893e-08, 0.649225, 0.649225, 1e-05),
+"attribute_data": PackedByteArray(127, 63, 76, 63, 148, 179, 32, 62, 121, 129, 86, 63, 148, 179, 32, 62, 127, 63, 76, 63, 64, 80, 25, 61, 121, 129, 86, 63, 64, 80, 25, 61),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_dbmcr"),
+"name": "textura sprite",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(158, 51, 166, 190, 156, 51, 166, 190, 13, 197, 115, 178, 255, 127, 255, 127, 255, 255, 255, 191, 158, 51, 166, 62, 156, 51, 166, 190, 13, 197, 115, 178, 255, 127, 255, 127, 255, 255, 255, 191, 158, 51, 166, 190, 156, 51, 166, 62, 13, 197, 115, 50, 255, 127, 255, 127, 255, 255, 255, 191, 158, 51, 166, 62, 156, 51, 166, 62, 13, 197, 115, 50, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_csh4q")
+
+[node name="parte_2" type="Node3D"]
+
+[node name="par 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32465, 0)
+mesh = SubResource("ArrayMesh_o5pp2")
+skeleton = NodePath("")

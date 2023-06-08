@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cijkn7ix7s05t"]
+
+[ext_resource type="Texture2D" uid="uid://hbrjsf02dslc" path="res://assets/Sprites/Tree/1.png" id="1_ric70"]
+[ext_resource type="Texture2D" uid="uid://cddkrw5345r4n" path="res://assets/Sprites/Tree/2.png" id="2_ofone"]
+[ext_resource type="Texture2D" uid="uid://csajdldebjxpj" path="res://assets/Sprites/Tree/3.png" id="3_seg18"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vckwt"]
+atlas = ExtResource("1_ric70")
+region = Rect2(0, 0, 128, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6br0"]
+atlas = ExtResource("2_ofone")
+region = Rect2(0, 0, 128, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph7ls"]
+atlas = ExtResource("3_seg18")
+region = Rect2(0, 0, 128, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxhne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vckwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6br0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph7ls")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree1" type="StaticBody3D"]
+
+[node name="Animations" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_cxhne")
+frame_progress = 0.260101

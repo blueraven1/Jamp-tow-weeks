@@ -1,0 +1,300 @@
+[gd_scene load_steps=22 format=3 uid="uid://d2m1083wigjty"]
+
+[ext_resource type="Shader" path="res://Sky.gdshader" id="1_v7tdu"]
+[ext_resource type="Texture2D" uid="uid://dpskhkkokxlfp" path="res://assets/sky.hdr" id="2_hued7"]
+[ext_resource type="PackedScene" uid="uid://xp4ne3lrwsmj" path="res://scenes/player/Player.tscn" id="3_dktyh"]
+[ext_resource type="PackedScene" uid="uid://xwnoawaer2t2" path="res://scenes/models/Tile_arena/arena_1.tscn" id="4_1ylql"]
+[ext_resource type="Script" path="res://Map_cons.gd" id="4_n71l8"]
+[ext_resource type="PackedScene" uid="uid://l14ong3u0cp7" path="res://scenes/models/Box/Box.tscn" id="6_fkxvi"]
+[ext_resource type="PackedScene" uid="uid://ccfgkedpnkjxw" path="res://scenes/models/ocean/Ocean.tscn" id="7_15bor"]
+[ext_resource type="PackedScene" uid="uid://ccgy1j2s7q5rb" path="res://scenes/models/rocas/roca_2.tscn" id="8_8lscp"]
+[ext_resource type="PackedScene" uid="uid://dy4w3d6xntp3j" path="res://scenes/models/ship/Barco_remos.tscn" id="8_rdb0x"]
+[ext_resource type="PackedScene" uid="uid://e42ipxxtqmje" path="res://scenes/models/rocas/roca_3.tscn" id="11_sxpbt"]
+[ext_resource type="PackedScene" uid="uid://dbmqcmd3cxvrt" path="res://scenes/models/rocas/roca_4.tscn" id="12_0gnww"]
+[ext_resource type="PackedScene" uid="uid://b02kbgs32fvj1" path="res://scenes/custom/pared.tscn" id="12_ktulk"]
+[ext_resource type="PackedScene" uid="uid://dxl3g4q5258eq" path="res://scenes/models/vegetacion/parte_1.tscn" id="12_tudvg"]
+[ext_resource type="PackedScene" uid="uid://bi3cdwogiu4ve" path="res://scenes/models/vegetacion/parte_2.tscn" id="13_5yjl6"]
+[ext_resource type="PackedScene" uid="uid://c1gv267808dos" path="res://scenes/models/vegetacion/parte_3.tscn" id="14_vmocq"]
+[ext_resource type="PackedScene" uid="uid://6f8qdotl7pql" path="res://scenes/models/vegetacion/parte_4.tscn" id="15_v4h73"]
+[ext_resource type="PackedScene" uid="uid://rfhco8kt1p33" path="res://scenes/models/rocas/roca_1.tscn" id="18_qatgw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmxk1"]
+shader = ExtResource("1_v7tdu")
+shader_parameter/skyTexture = ExtResource("2_hued7")
+
+[sub_resource type="Sky" id="Sky_aw622"]
+sky_material = SubResource("ShaderMaterial_pmxk1")
+
+[sub_resource type="Environment" id="Environment_qp2j7"]
+background_mode = 2
+background_energy_multiplier = 0.84
+sky = SubResource("Sky_aw622")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1crbr"]
+
+[node name="Main" type="Node3D"]
+
+[node name="World" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qp2j7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.319029, -0.722713, -0.613112, -0.744213, 0.591594, -0.310102, 0.586828, 0.357354, -0.726588, 17.4262, 19.803, -21.3334)
+
+[node name="Player" parent="." instance=ExtResource("3_dktyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0528, 0.5, -0.719917)
+
+[node name="Map_cons" type="Node3D" parent="."]
+script = ExtResource("4_n71l8")
+
+[node name="playa" type="Node3D" parent="Map_cons"]
+
+[node name="arena_1" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -7.95985)
+
+[node name="arena_2" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 20, 0, -7.944)
+
+[node name="arena_3" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 40, 0, -7.95985)
+
+[node name="arena_4" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -27.753)
+
+[node name="arena_5" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 20, 0, -27.753)
+
+[node name="arena_6" parent="Map_cons/playa" instance=ExtResource("4_1ylql")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 40, 0, -27.753)
+
+[node name="Boxes" type="Node3D" parent="Map_cons"]
+
+[node name="Box" parent="Map_cons/Boxes" instance=ExtResource("6_fkxvi")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 9.00878, 0.487586, -6.82195)
+
+[node name="Rocks" type="Node3D" parent="Map_cons"]
+
+[node name="roca_2" parent="Map_cons/Rocks" instance=ExtResource("8_8lscp")]
+transform = Transform3D(0.669217, -0.0527387, 1.3414, -0.00784877, -1.49897, -0.0550179, 1.34242, 0.017527, -0.669034, 16.9393, -1.97959, 0.817756)
+
+[node name="roca_4" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(0.669484, 5.88201e-08, 1.34231, -1.31134e-07, -1.5, 1.31134e-07, 1.34231, -1.75876e-07, -0.669484, 12.4084, 0.0494604, 4.99869)
+
+[node name="roca_15" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(0.669484, 5.88201e-08, 1.34231, -1.31134e-07, -1.5, 1.31134e-07, 1.34231, -1.75876e-07, -0.669484, 13.8602, -0.819607, 1.95566)
+
+[node name="roca_3" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(0.446323, 7.82322e-08, 0.894872, 0, -1, 8.74228e-08, 0.894872, -3.90188e-08, -0.446323, 14.4753, -0.55347, -0.43443)
+
+[node name="roca_5" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(0.877213, -4.19718e-08, 0.480101, 0, -1, -8.74228e-08, 0.480101, 7.66884e-08, -0.877213, 12.631, 0.401482, 7.18128)
+
+[node name="roca_7" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(0.821149, 4.98934e-08, -0.570714, 0, -1, -8.74228e-08, -0.570714, 7.17871e-08, -0.821149, -10.7424, 0.00664949, -3.92963)
+
+[node name="roca_6" parent="Map_cons/Rocks" instance=ExtResource("8_8lscp")]
+transform = Transform3D(1.99997, -0.010472, -2.9437e-07, -0.010465, -1.99863, -0.0733572, 0.000383804, 0.0733562, -1.99865, -10.4961, -2.08652, -7.01291)
+
+[node name="roca_8" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(2, 0, 0, 0, -2, 1.74846e-07, 0, -1.74846e-07, -2, -10.5201, -1.20081, -11.7053)
+
+[node name="roca_16" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(1.43958, 1.21377e-07, 1.38839, 0, -2, 1.74846e-07, 1.38839, -1.25852e-07, -1.43958, 17.126, -1.94452, -11.7053)
+
+[node name="roca_17" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-1.82669, -0.120113, -0.805459, 0.0287322, -1.9864, 0.231057, -0.813858, 0.199464, 1.816, 2.14363, -1.24891, -11.7053)
+
+[node name="roca_18" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-1.01451, 1.50682e-07, 1.72359, 0, -2, 1.74846e-07, 1.72359, 8.86911e-08, 1.01451, 40.7982, -1.30954, -1.56768)
+
+[node name="roca_19" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(0.365556, -0.22197, -1.95374, 0.0287322, -1.9864, 0.231057, -1.9661, -0.0702998, -0.359882, 37.3052, -0.613931, -16.1372)
+
+[node name="roca_9" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -8.97419, 0.160323, -14.0639)
+
+[node name="roca_11" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(8.74228e-08, 1.74846e-07, 2, -1.74846e-07, -2, 1.74846e-07, 2, -1.74846e-07, -8.74228e-08, 21.7338, -1.20081, 1.19918)
+
+[node name="roca_24" parent="Map_cons/Rocks" instance=ExtResource("8_8lscp")]
+transform = Transform3D(-0.0773797, -0.0545407, 1.49701, -0.00784877, -1.49897, -0.0550179, 1.49798, -0.0106713, 0.0770376, 17.6188, -1.97959, -34.1578)
+
+[node name="roca_25" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-0.0770931, 1.377e-07, 1.49802, -1.31134e-07, -1.5, 1.31134e-07, 1.49802, -1.24221e-07, 0.0770931, 11.6176, 0.0494604, -32.7452)
+
+[node name="roca_26" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-0.0770931, 1.377e-07, 1.49802, -1.31134e-07, -1.5, 1.31134e-07, 1.49802, -1.24221e-07, 0.0770931, 14.3782, -0.819607, -34.681)
+
+[node name="roca_27" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(-0.0513945, 8.73072e-08, 0.998679, 3.17922e-15, -1, 8.74228e-08, 0.998679, 4.49305e-09, 0.0513945, 16.089, -0.55347, -36.4597)
+
+[node name="roca_28" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(0.527757, -7.42566e-08, 0.849396, 0, -1, -8.74228e-08, 0.849396, 4.61379e-08, -0.527757, 10.7383, -0.158707, -30.7352)
+
+[node name="roca_29" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-0.983449, 2.38223e-07, 1.7415, -1.74846e-07, -2, 1.74846e-07, 1.7415, -6.62712e-08, 0.983449, 21.6061, -1.20081, -31.4681)
+
+[node name="roca_30" parent="Map_cons/Rocks" instance=ExtResource("8_8lscp")]
+transform = Transform3D(-0.0972926, 0.0554115, -1.49581, -0.00784877, -1.49897, -0.0550179, -1.49682, 0.0042583, 0.0975187, 29.2456, -1.97959, -34.2169)
+
+[node name="roca_31" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-0.0975814, -1.22325e-07, -1.49682, -1.31134e-07, -1.5, 1.31134e-07, -1.49682, 1.39387e-07, 0.0975814, 36.1791, 0.0494604, -34.4324)
+
+[node name="roca_32" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(-0.0975814, -1.22325e-07, -1.49682, -1.31134e-07, -1.5, 1.31134e-07, -1.49682, 1.39387e-07, 0.0975814, 32.5251, -0.819607, -32.1888)
+
+[node name="roca_33" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(-0.0650551, -8.72376e-08, -0.997882, 3.1009e-15, -1, 8.74228e-08, -0.997882, 5.68729e-09, 0.0650551, 29.7794, -0.55347, -30.2233)
+
+[node name="roca_34" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(-0.622924, 6.83893e-08, -0.782282, -6.76759e-15, -1, -8.74228e-08, -0.782282, -5.44578e-08, 0.622924, 40.5363, -0.380265, -36.531)
+
+[node name="roca_35" parent="Map_cons/Rocks" instance=ExtResource("12_0gnww")]
+transform = Transform3D(0.774323, -2.28904e-07, -1.84402, -1.74846e-07, -2, 1.74846e-07, -1.84402, 9.35164e-08, -0.774323, 24.9727, -1.20081, -34.5397)
+
+[node name="roca_12" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, -8.74228e-08, -1, 8.74228e-08, 1, -8.74228e-08, -4.37114e-08, 8.16685, -0.841373, -2.38031)
+
+[node name="roca_10" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(0.821149, 4.98934e-08, -0.570714, 0, -1, -8.74228e-08, -0.570714, 7.17871e-08, -0.821149, -10.9176, 0.763303, -14.8538)
+
+[node name="roca_1" parent="Map_cons/Rocks" instance=ExtResource("18_qatgw")]
+transform = Transform3D(-0.999996, -0.00265279, 0, 0.00265279, -0.999996, 0, 0, 0, 1, 2.6357, -0.936148, -1.79672)
+
+[node name="roca_20" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(-0.714045, 1.23628e-07, 0.7001, -8.74228e-08, -1, 8.74228e-08, 0.7001, 1.21915e-09, 0.714045, 32.1601, -0.841373, -4.23432)
+
+[node name="roca_21" parent="Map_cons/Rocks" instance=ExtResource("18_qatgw")]
+transform = Transform3D(-0.700097, -0.00185722, -0.714045, 0.00265279, -0.999996, 0, -0.714043, -0.00189421, 0.7001, 27.871, -0.936148, -7.77523)
+
+[node name="roca_22" parent="Map_cons/Rocks" instance=ExtResource("11_sxpbt")]
+transform = Transform3D(-0.33249, 1.11516e-07, 0.943107, -8.74228e-08, -1, 8.74228e-08, 0.943107, -5.33818e-08, 0.33249, 36.187, -0.841373, -10.0829)
+
+[node name="roca_23" parent="Map_cons/Rocks" instance=ExtResource("18_qatgw")]
+transform = Transform3D(-0.943103, -0.00250187, -0.33249, 0.00265279, -0.999997, 8.31258e-11, -0.332489, -0.000882028, 0.943107, 30.7765, -0.936148, -11.3716)
+
+[node name="roca_13" parent="Map_cons/Rocks" instance=ExtResource("18_qatgw")]
+transform = Transform3D(-0.999996, -0.00265279, 0, 0.00265279, -0.999996, 0, 0, 0, 1, -4.19478, -1.22867, 0.157566)
+
+[node name="roca_14" parent="Map_cons/Rocks" instance=ExtResource("18_qatgw")]
+transform = Transform3D(-0.450362, -0.00119472, -0.892845, 0.00265279, -0.999996, 0, -0.892842, -0.00236853, 0.450363, -0.569497, -1.02472, -3.27471)
+
+[node name="Trees" type="Node3D" parent="Map_cons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018177, 0, -0.0030129)
+
+[node name="limites" type="Node3D" parent="Map_cons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50844, 0, 0)
+
+[node name="pared" parent="Map_cons/limites" instance=ExtResource("12_ktulk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52753, 4.27925, -8.62042)
+
+[node name="pared2" parent="Map_cons/limites" instance=ExtResource("12_ktulk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7318, 4.34851, -17.7164)
+
+[node name="pared3" parent="Map_cons/limites" instance=ExtResource("12_ktulk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.621, 4.34851, -17.7164)
+
+[node name="vegetacion" type="Node3D" parent="Map_cons"]
+transform = Transform3D(0.999999, 0.000911976, -0.000439067, -0.000911983, 1, -1.56931e-05, 0.000439052, 1.61124e-05, 1, 0, 0, 0)
+
+[node name="parte_1" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.879483, 0, 0.475931, 0, 1, 0, -0.475931, 0, 0.879483, -6.87104, -0.978393, -7.40649)
+
+[node name="parte_2" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(0.443744, 0, -0.896154, 0, 1, 0, 0.896154, 0, 0.443744, -6.81624, -1.05734, -7.3671)
+
+[node name="parte_17" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.879483, 0, 0.475931, 0, 1, 0, -0.475931, 0, 0.879483, 0.748279, -0.978393, -10.0531)
+
+[node name="parte_18" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(0.443744, 0, -0.896154, 0, 1, 0, 0.896154, 0, 0.443744, 0.803086, -1.05734, -10.0137)
+
+[node name="parte_19" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.435828, 0, 0.90003, 0, 1, 0, -0.90003, 0, 0.435828, 15.0705, -0.978394, -9.04018)
+
+[node name="parte_20" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(0.883643, 0, -0.468161, 0, 1, 0, 0.468161, 0, 0.883643, 15.138, -1.05734, -9.04022)
+
+[node name="parte_21" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.435828, 0, 0.90003, 0, 1, 0, -0.90003, 0, 0.435828, 5.40047, -0.751688, -13.6818)
+
+[node name="parte_22" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(0.883643, 0, -0.468161, 0, 1, 0, 0.468161, 0, 0.883643, 5.46796, -0.830631, -13.6819)
+
+[node name="parte_3" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88704, -0.529917, -6.57606)
+
+[node name="parte_4" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(-0.0481176, 0, -0.998842, 0, 1, 0, 0.998842, 0, -0.0481176, -5.84927, -0.805037, -6.7212)
+
+[node name="parte_13" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.636038, 0, 0.771658, 0, 1, 0, -0.771658, 0, 0.636038, 0.587403, -1.01192, -5.7154)
+
+[node name="parte_14" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(0.748099, 0, -0.663587, 0, 1, 0, 0.663587, 0, 0.748099, 0.652998, -1.09087, -5.69951)
+
+[node name="parte_15" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(0.844253, 0, 0.535945, 0, 1, 0, -0.535945, 0, 0.844253, 1.61864, -1.07964, -4.8979)
+
+[node name="parte_16" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(0.4947, 0, -0.869063, 0, 1, 0, 0.869063, 0, 0.4947, 1.57274, -1.07255, -5.04068)
+
+[node name="parte_5" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07927, -0.367562, -5.9201)
+
+[node name="parte_6" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.260673, 0, -0.965427, 0, 1, 0, 0.965427, 0, 0.260673, -4.96834, -0.524019, -6.31116)
+
+[node name="parte_7" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(0.554801, -7.19906e-09, -0.831983, -0.177592, 0.976952, -0.118426, 0.812808, 0.213457, 0.542014, -8.63283, -0.806991, -5.01744)
+
+[node name="parte_8" parent="Map_cons/vegetacion" instance=ExtResource("13_5yjl6")]
+transform = Transform3D(-0.499395, 0, -0.866374, -0.184933, 0.976952, 0.106599, 0.846407, 0.213457, -0.487886, -8.57069, -0.901093, -4.95658)
+
+[node name="parte_9" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(-0.238503, -0.159479, -0.957958, -0.177592, 0.976952, -0.118426, 0.954766, 0.141881, -0.261328, -8.34927, -0.687376, -3.51758)
+
+[node name="parte_10" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(-0.945372, -0.159479, 0.284321, -0.109743, 0.976953, 0.183085, -0.306967, 0.141881, -0.941085, -8.57329, -0.902825, -3.71298)
+
+[node name="parte_11" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(0.554801, -7.19906e-09, -0.831983, -0.177592, 0.976952, -0.118426, 0.812808, 0.213457, 0.542014, -8.37569, -0.70705, -2.61323)
+
+[node name="parte_12" parent="Map_cons/vegetacion" instance=ExtResource("12_tudvg")]
+transform = Transform3D(-0.658598, -1.53565e-08, -0.752495, -0.160625, 0.976952, 0.140582, 0.735152, 0.213457, -0.643418, -8.3832, -0.833289, -2.76842)
+
+[node name="parte_23" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(0.433596, 0, -0.901107, 0, 1, 0, 0.901107, 0, 0.433596, 3.15573, -0.952177, -9.32536)
+
+[node name="parte_24" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(0.912791, 0, 0.408426, 0, 1, 0, -0.408426, 0, 0.912791, 3.07921, -0.958295, -9.34008)
+
+[node name="parte_25" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(0.804106, 0, -0.594486, 0, 1, 0, 0.594486, 0, 0.804106, 1.99398, -0.952177, -9.86328)
+
+[node name="parte_26" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(0.616569, 0, 0.787301, 0, 1, 0, -0.787301, 0, 0.616569, 1.91944, -0.958295, -9.84057)
+
+[node name="parte_27" parent="Map_cons/vegetacion" instance=ExtResource("14_vmocq")]
+transform = Transform3D(1, -0.000911983, 0.000439053, 0.000911976, 1, 1.60936e-05, -0.000439067, -1.5712e-05, 1, 14.3763, -0.889483, -9.65928)
+
+[node name="parte_28" parent="Map_cons/vegetacion" instance=ExtResource("15_v4h73")]
+transform = Transform3D(-0.158259, -0.000911983, -0.987397, -0.000128834, 1, -0.000902974, 0.987398, -1.5712e-05, -0.158259, 14.318, -0.906412, -9.64975)
+
+[node name="Ocean" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.75152)
+
+[node name="ocean1" parent="Ocean" instance=ExtResource("7_15bor")]
+transform = Transform3D(-6.45892e-08, -9.76925e-10, 2.45249, -0.260546, 0.12675, -2.98321e-15, -1.47763, -0.0223495, -1.07202e-07, -11.8469, 1.12146, 13.8269)
+
+[node name="ocean3" parent="Ocean" instance=ExtResource("7_15bor")]
+transform = Transform3D(2.38662, 0.0143009, 0, -0.250844, 0.136064, 0, 0, 0, 2.45249, -29.8283, 1.93146, -13.2334)
+
+[node name="ocean2" parent="Ocean" instance=ExtResource("7_15bor")]
+transform = Transform3D(-6.45892e-08, -9.76925e-10, 2.45249, -0.260546, 0.12675, 0, -1.47763, -0.0223494, -1.07202e-07, 37.1531, 1.52146, 13.8269)
+
+[node name="ocean4" parent="Ocean" instance=ExtResource("7_15bor")]
+transform = Transform3D(-1.35996e-07, 4.75561e-10, 8.88414, 0.327004, 0.103512, 0, -3.11123, 0.0108796, -3.88338e-07, 16.9107, 2.63553, -60.9835)
+
+[node name="Barco_remos" parent="." instance=ExtResource("8_rdb0x")]
+transform = Transform3D(0.126909, -0.0594777, -0.479954, -0.161105, 0.462665, -0.0999344, 0.456004, 0.180011, 0.098269, -5.31229, 0.367586, -3.02956)
+physics_material_override = SubResource("PhysicsMaterial_1crbr")
