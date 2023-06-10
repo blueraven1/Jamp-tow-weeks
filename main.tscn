@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" path="res://Sky.gdshader" id="1_v7tdu"]
 [ext_resource type="Texture2D" uid="uid://dpskhkkokxlfp" path="res://assets/Sprites/sky.hdr" id="2_ayb7f"]
-[ext_resource type="PackedScene" uid="uid://xp4ne3lrwsmj" path="res://scenes/player/Player.tscn" id="3_dktyh"]
 [ext_resource type="PackedScene" uid="uid://xwnoawaer2t2" path="res://scenes/models/Tile_arena/arena_1.tscn" id="4_1ylql"]
 [ext_resource type="Script" path="res://Map_cons.gd" id="4_n71l8"]
 [ext_resource type="PackedScene" uid="uid://cvo1to17aq1w8" path="res://scenes/models/Box/box.tscn" id="6_281qv"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bi3cdwogiu4ve" path="res://scenes/models/vegetacion/parte_2.tscn" id="13_5yjl6"]
 [ext_resource type="PackedScene" uid="uid://c1gv267808dos" path="res://scenes/models/vegetacion/parte_3.tscn" id="14_vmocq"]
 [ext_resource type="PackedScene" uid="uid://6f8qdotl7pql" path="res://scenes/models/vegetacion/parte_4.tscn" id="15_v4h73"]
+[ext_resource type="PackedScene" uid="uid://d2ilyn11ys18d" path="res://scenes/character/Character.tscn" id="17_parao"]
 [ext_resource type="PackedScene" uid="uid://rfhco8kt1p33" path="res://scenes/models/rocas/roca_1.tscn" id="18_qatgw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmxk1"]
@@ -39,9 +39,6 @@ environment = SubResource("Environment_qp2j7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.319029, -0.722713, -0.613112, -0.744213, 0.591594, -0.310102, 0.586828, 0.357354, -0.726588, 17.4262, 19.803, -21.3334)
-
-[node name="Player" parent="." instance=ExtResource("3_dktyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0528, 0.5, -0.719917)
 
 [node name="Map_cons" type="Node3D" parent="."]
 script = ExtResource("4_n71l8")
@@ -298,3 +295,6 @@ transform = Transform3D(-1.35996e-07, 4.75561e-10, 8.88414, 0.327004, 0.103512, 
 [node name="Barco_remos" parent="." instance=ExtResource("8_rdb0x")]
 transform = Transform3D(0.126909, -0.0594777, -0.479954, -0.161105, 0.462665, -0.0999344, 0.456004, 0.180011, 0.098269, -5.31229, 0.367586, -3.02956)
 physics_material_override = SubResource("PhysicsMaterial_1crbr")
+
+[node name="Character" parent="." instance=ExtResource("17_parao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09643, 0)
