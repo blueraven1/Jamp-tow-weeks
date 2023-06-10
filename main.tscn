@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=3 uid="uid://d2m1083wigjty"]
 
 [ext_resource type="Shader" path="res://Sky.gdshader" id="1_v7tdu"]
-[ext_resource type="Texture2D" uid="uid://dpskhkkokxlfp" path="res://assets/sky.hdr" id="2_hued7"]
+[ext_resource type="Texture2D" uid="uid://dpskhkkokxlfp" path="res://assets/Sprites/sky.hdr" id="2_ayb7f"]
 [ext_resource type="PackedScene" uid="uid://xp4ne3lrwsmj" path="res://scenes/player/Player.tscn" id="3_dktyh"]
 [ext_resource type="PackedScene" uid="uid://xwnoawaer2t2" path="res://scenes/models/Tile_arena/arena_1.tscn" id="4_1ylql"]
 [ext_resource type="Script" path="res://Map_cons.gd" id="4_n71l8"]
-[ext_resource type="PackedScene" uid="uid://l14ong3u0cp7" path="res://scenes/models/Box/Box.tscn" id="6_fkxvi"]
+[ext_resource type="PackedScene" uid="uid://cvo1to17aq1w8" path="res://scenes/models/Box/box.tscn" id="6_281qv"]
 [ext_resource type="PackedScene" uid="uid://ccfgkedpnkjxw" path="res://scenes/models/ocean/Ocean.tscn" id="7_15bor"]
 [ext_resource type="PackedScene" uid="uid://ccgy1j2s7q5rb" path="res://scenes/models/rocas/roca_2.tscn" id="8_8lscp"]
 [ext_resource type="PackedScene" uid="uid://dy4w3d6xntp3j" path="res://scenes/models/ship/Barco_remos.tscn" id="8_rdb0x"]
@@ -20,7 +20,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pmxk1"]
 shader = ExtResource("1_v7tdu")
-shader_parameter/skyTexture = ExtResource("2_hued7")
+shader_parameter/skyTexture = ExtResource("2_ayb7f")
 
 [sub_resource type="Sky" id="Sky_aw622"]
 sky_material = SubResource("ShaderMaterial_pmxk1")
@@ -68,8 +68,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 40, 0, -27.753)
 
 [node name="Boxes" type="Node3D" parent="Map_cons"]
 
-[node name="Box" parent="Map_cons/Boxes" instance=ExtResource("6_fkxvi")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 9.00878, 0.487586, -6.82195)
+[node name="Box" parent="Map_cons/Boxes" instance=ExtResource("6_281qv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48316, 0.625732, -3.3351)
 
 [node name="Rocks" type="Node3D" parent="Map_cons"]
 

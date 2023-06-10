@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpskhkkokxlfp"
-path.bptc="res://.godot/imported/sky.hdr-58b613cd1aeba3f6b838d7e6edc4a86f.bptc.ctex"
+uid="uid://b3787pwkru60t"
+path.s3tc="res://.godot/imported/BoxBaseColor.png-748672aadce8d7a0bc6e18aa7a7c3efb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sky.hdr"
-dest_files=["res://.godot/imported/sky.hdr-58b613cd1aeba3f6b838d7e6edc4a86f.bptc.ctex"]
+source_file="res://assets/Models/Box/BoxBaseColor.png"
+dest_files=["res://.godot/imported/BoxBaseColor.png-748672aadce8d7a0bc6e18aa7a7c3efb.s3tc.ctex"]
 
 [params]
 

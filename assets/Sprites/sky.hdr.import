@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddfmprigu6e2w"
-path.s3tc="res://.godot/imported/Caja.png-3e8cb7e08f002a594d739e9c0200ca75.s3tc.ctex"
+uid="uid://dpskhkkokxlfp"
+path.bptc="res://.godot/imported/sky.hdr-0fa5646d30d36ab8c6efe257b40999f3.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Models/cubo/Caja.png"
-dest_files=["res://.godot/imported/Caja.png-3e8cb7e08f002a594d739e9c0200ca75.s3tc.ctex"]
+source_file="res://assets/Sprites/sky.hdr"
+dest_files=["res://.godot/imported/sky.hdr-0fa5646d30d36ab8c6efe257b40999f3.bptc.ctex"]
 
 [params]
 
