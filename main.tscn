@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dpskhkkokxlfp" path="res://assets/Sprites/sky.hdr" id="2_ayb7f"]
 [ext_resource type="PackedScene" uid="uid://xwnoawaer2t2" path="res://scenes/models/Tile_arena/arena_1.tscn" id="4_1ylql"]
 [ext_resource type="Script" path="res://Map_cons.gd" id="4_n71l8"]
-[ext_resource type="PackedScene" uid="uid://cvo1to17aq1w8" path="res://scenes/models/Box/box.tscn" id="6_281qv"]
+[ext_resource type="PackedScene" uid="uid://cvo1to17aq1w8" path="res://scenes/models/Box/Box.tscn" id="6_281qv"]
 [ext_resource type="PackedScene" uid="uid://ccfgkedpnkjxw" path="res://scenes/models/ocean/Ocean.tscn" id="7_15bor"]
 [ext_resource type="PackedScene" uid="uid://ccgy1j2s7q5rb" path="res://scenes/models/rocas/roca_2.tscn" id="8_8lscp"]
 [ext_resource type="PackedScene" uid="uid://dy4w3d6xntp3j" path="res://scenes/models/ship/Barco_remos.tscn" id="8_rdb0x"]
